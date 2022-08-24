@@ -7,6 +7,7 @@ export(ButtonGroup) var GroupeClavier
 var LettreClavier
 var Mot
 var Mot_separeL = []
+var affichage = "test"
 
 #listes des mots
 var list = [  "apple","turnip","banana","clock","cup","flower","fork","glasses","oranage","pencil","spoon"]
@@ -16,8 +17,13 @@ func _ready():
 	bouttons()
 	choix_mot()
 	separation_mot()
+	demarrage()
 
-
+#démarrage ==> A revoir
+func demarrage():
+	$Affichage.text = affichage
+	affichage = Mot_separeL.size()
+	print(Mot_separeL.size())
 
 
 #l'appuie sur un bouton envoie un signal qui met en mémoire la lettre afficher sur le bouton et bloque le bouton qui ne peut plus etre utilisé
@@ -32,6 +38,7 @@ func lettre():
 	
 #Choix d'un mot dans une liste  : aléatoire randi(), entre %, 0 et le nombre total de mot dans la liste size()
 func choix_mot():
+	randomize()
 	Mot = list[randi()%list.size()]
 	print(Mot)
 	
