@@ -7,29 +7,30 @@ export(ButtonGroup) var GroupeClavier
 var LettreClavier
 var Mot
 var Mot_separeL = []
-var underscore = []
-var affichage = ""
+var affichage = []
 
 #listes des mots
 var list = [  "apple","turnip","banana","clock","cup","flower","fork","glasses","oranage","pencil","spoon"]
 
 
 func _ready():
-	bouttons()
 	choix_mot()
 	separation_mot()
 	initialisation()
-#	test()
+	bouttons()
 
-#l'appuie sur un bouton envoie un signal qui met en mémoire la lettre afficher sur le bouton et bloque le bouton qui ne peut plus etre utilisé
+#l'appuie sur un bouton envoie un signal 
 func bouttons():
 	for button in GroupeClavier.get_buttons():
 		button.connect("pressed",self,"lettre")
 
+#le signal : met en mémoire la lettre (en minuscule) affiché sur le bouton et bloque le bouton qui ne peut plus etre utilisé
 func lettre():
-	LettreClavier = GroupeClavier.get_pressed_button().text
+	LettreClavier = GroupeClavier.get_pressed_button().text.to_lower()
 	GroupeClavier.get_pressed_button().disabled = true
 	print(LettreClavier)
+	test()
+	
 	
 #Choix d'un mot dans une liste  : aléatoire randi(), entre %, 0 et le nombre total de mot dans la liste size()
 func choix_mot():
@@ -45,28 +46,26 @@ func separation_mot():
 		print(Mot_separeL)
 		
 
+#affichae des underscore au départ
 func initialisation():
 	for i in Mot_separeL:
-		underscore.append("_ ")
-	for i in underscore:
+		affichage.append("_ ")
+	for i in affichage:
 		$Affichage.text += String(i)
-		print (underscore)
+		print (affichage)
 		
-		
-#		affichage 
 
-##test ==> A revoir
-#func test():
-#	if Mot_separeL.find(LettreClavier) == -1:
-#		affichage = "ok"
-#	else :
-#		affichage = "no"
-#
-#
-##	for i in Mot_separeL:
-##			affichage += String(i)
-##		print(i)
-#		$Affichage.text = affichage
-#
-#
-#	print(affichage)
+
+#test ==> A revoir
+func test():
+	if Mot_separeL.find(LettreClavier) == -1:
+		print("no")
+		print (Mot_separeL.find(LettreClavier))
+	else :
+		#revoir la phase ci dessous car insert décale : il faut juste mettre la lettre à la bonne place => revir les array add position
+		affichage.insert(Mot_separeL.find(LettreClavier), LettreClavier)
+		$Affichage.text = str(affichage)
+		print("ok")
+		print (Mot_separeL.find(LettreClavier))
+		print (affichage)
+		
