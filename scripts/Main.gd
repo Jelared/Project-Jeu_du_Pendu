@@ -32,6 +32,7 @@ func _ready():
 	initialisation()
 	bouttons()
 
+
 #L'appuie sur un bouton envoie un signal 
 func bouttons():
 	for button in groupe_clavier.get_buttons():
@@ -69,20 +70,25 @@ func initialisation():
 		print (affichage)
 
 
-#test ==> A revoir
+#test pour la lettre choisie
 func test():
 	var position_L = mot_separeL.find(lettre_clavier)
 	if position_L == -1:
 		print("no")
 		print (position_L)
+		pendu()
 	else :
-		#attention au lettre double à revoir
-		affichage_ = ""
-		affichage[position_L] = lettre_clavier
-		for i in affichage:
-			affichage_ += String(i)
-			$Affichage.text = affichage_
-		print("ok")
-		print (mot_separeL.find(lettre_clavier))
-		print (affichage)
-		
+		while position_L > -1: #boucle pour vérifier s'il existe plusieurs fois la lettre
+			affichage_ = ""
+			affichage[position_L] = lettre_clavier #affichage de la lettre à la bonne position
+			for i in affichage:
+				affichage_ += String(i)
+				$Affichage.text = affichage_
+			position_L = mot_separeL.find(lettre_clavier,position_L+1) # suite la boucle qui décale la position de 1 pour vérif
+			print("ok")
+			print (mot_separeL.find(lettre_clavier))
+			print (affichage)
+
+
+func pendu():
+	pass
