@@ -11,6 +11,8 @@ margin_bottom = 2.0
 script = ExtResource( 1 )
 groupe_clavier = ExtResource( 2 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
 [node name="Affichage" type="RichTextLabel" parent="."]
 margin_left = 216.0
 margin_top = 158.0
