@@ -9,6 +9,7 @@ var mot #mot à trouver
 var mot_separeL = [] #array avec les lettres séparées
 var affichage = [] #Array avec les lettres trouvées
 var affichage_ = "" #String avec les lettres trouvées
+var perdu = 1
 
 #Listes des mots
 var list = [
@@ -91,4 +92,10 @@ func test():
 
 
 func pendu():
-	pass
+	$Pendu.frame = perdu
+	perdu += 1
+#affichage game over revoir
+#	if perdu = 6:
+#		print(perdu)
+	
+	

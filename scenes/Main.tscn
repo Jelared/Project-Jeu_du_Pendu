@@ -1,7 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Groupes/buttongroup_clavier.tres" type="ButtonGroup" id=2]
+[ext_resource path="res://Sprites/SP1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/SP6.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/SP3.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/SP2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/SP4.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/SP5.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/SP0.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -14,218 +29,224 @@ groupe_clavier = ExtResource( 2 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Affichage" type="RichTextLabel" parent="."]
-margin_left = 216.0
-margin_top = 158.0
-margin_right = 800.0
-margin_bottom = 222.0
+margin_left = 240.0
+margin_top = 30.0
+margin_right = 824.0
+margin_bottom = 94.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 620.0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 112.0
+margin_top = 430.0
+margin_right = 745.0
+margin_bottom = 450.0
 
-[node name="Button_A" type="Button" parent="VBoxContainer"]
-margin_right = 40.0
+[node name="Button_A" type="Button" parent="HBoxContainer"]
+margin_right = 21.0
 margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "A"
 
-[node name="Button_B" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
-margin_right = 40.0
-margin_bottom = 44.0
+[node name="Button_B" type="Button" parent="HBoxContainer"]
+margin_left = 25.0
+margin_right = 46.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "B"
 
-[node name="Button_C" type="Button" parent="VBoxContainer"]
-margin_top = 48.0
-margin_right = 40.0
-margin_bottom = 68.0
+[node name="Button_C" type="Button" parent="HBoxContainer"]
+margin_left = 50.0
+margin_right = 70.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "C"
 
-[node name="Button_D" type="Button" parent="VBoxContainer"]
-margin_top = 72.0
-margin_right = 40.0
-margin_bottom = 92.0
+[node name="Button_D" type="Button" parent="HBoxContainer"]
+margin_left = 74.0
+margin_right = 96.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "D"
 
-[node name="Button_E" type="Button" parent="VBoxContainer"]
-margin_top = 96.0
-margin_right = 40.0
-margin_bottom = 116.0
+[node name="Button_E" type="Button" parent="HBoxContainer"]
+margin_left = 100.0
+margin_right = 119.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "E"
 
-[node name="Button_F" type="Button" parent="VBoxContainer"]
-margin_top = 120.0
-margin_right = 40.0
-margin_bottom = 140.0
+[node name="Button_F" type="Button" parent="HBoxContainer"]
+margin_left = 123.0
+margin_right = 142.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "F"
 
-[node name="Button_G" type="Button" parent="VBoxContainer"]
-margin_top = 144.0
-margin_right = 40.0
-margin_bottom = 164.0
+[node name="Button_G" type="Button" parent="HBoxContainer"]
+margin_left = 146.0
+margin_right = 168.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "G"
 
-[node name="Button_H" type="Button" parent="VBoxContainer"]
-margin_top = 168.0
-margin_right = 40.0
-margin_bottom = 188.0
+[node name="Button_H" type="Button" parent="HBoxContainer"]
+margin_left = 172.0
+margin_right = 194.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "H"
 
-[node name="Button_I" type="Button" parent="VBoxContainer"]
-margin_top = 192.0
-margin_right = 40.0
-margin_bottom = 212.0
+[node name="Button_I" type="Button" parent="HBoxContainer"]
+margin_left = 198.0
+margin_right = 215.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "I"
 
-[node name="Button_J" type="Button" parent="VBoxContainer"]
-margin_top = 216.0
-margin_right = 40.0
-margin_bottom = 236.0
+[node name="Button_J" type="Button" parent="HBoxContainer"]
+margin_left = 219.0
+margin_right = 234.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "J"
 
-[node name="Button_K" type="Button" parent="VBoxContainer"]
-margin_top = 240.0
-margin_right = 40.0
-margin_bottom = 260.0
+[node name="Button_K" type="Button" parent="HBoxContainer"]
+margin_left = 238.0
+margin_right = 258.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "K"
 
-[node name="Button_L" type="Button" parent="VBoxContainer"]
-margin_top = 264.0
-margin_right = 40.0
-margin_bottom = 284.0
+[node name="Button_L" type="Button" parent="HBoxContainer"]
+margin_left = 262.0
+margin_right = 281.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "L"
 
-[node name="Button_M" type="Button" parent="VBoxContainer"]
-margin_top = 288.0
-margin_right = 40.0
-margin_bottom = 308.0
+[node name="Button_M" type="Button" parent="HBoxContainer"]
+margin_left = 285.0
+margin_right = 309.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "M"
 
-[node name="Button_N" type="Button" parent="VBoxContainer"]
-margin_top = 312.0
-margin_right = 40.0
-margin_bottom = 332.0
+[node name="Button_N" type="Button" parent="HBoxContainer"]
+margin_left = 313.0
+margin_right = 335.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "N"
 
-[node name="Button_O" type="Button" parent="VBoxContainer"]
-margin_top = 336.0
-margin_right = 40.0
-margin_bottom = 356.0
+[node name="Button_O" type="Button" parent="HBoxContainer"]
+margin_left = 339.0
+margin_right = 362.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "O"
 
-[node name="Button_P" type="Button" parent="VBoxContainer"]
-margin_top = 360.0
-margin_right = 40.0
-margin_bottom = 380.0
+[node name="Button_P" type="Button" parent="HBoxContainer"]
+margin_left = 366.0
+margin_right = 386.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "P"
 
-[node name="Button_Q" type="Button" parent="VBoxContainer"]
-margin_top = 384.0
-margin_right = 40.0
-margin_bottom = 404.0
+[node name="Button_Q" type="Button" parent="HBoxContainer"]
+margin_left = 390.0
+margin_right = 413.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "Q"
 
-[node name="Button_R" type="Button" parent="VBoxContainer"]
-margin_top = 408.0
-margin_right = 40.0
-margin_bottom = 428.0
+[node name="Button_R" type="Button" parent="HBoxContainer"]
+margin_left = 417.0
+margin_right = 437.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "R"
 
-[node name="Button S" type="Button" parent="VBoxContainer"]
-margin_top = 432.0
-margin_right = 40.0
-margin_bottom = 452.0
+[node name="Button S" type="Button" parent="HBoxContainer"]
+margin_left = 441.0
+margin_right = 460.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "S"
 
-[node name="Button T" type="Button" parent="VBoxContainer"]
-margin_top = 456.0
-margin_right = 40.0
-margin_bottom = 476.0
+[node name="Button T" type="Button" parent="HBoxContainer"]
+margin_left = 464.0
+margin_right = 483.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "T"
 
-[node name="Button U" type="Button" parent="VBoxContainer"]
-margin_top = 480.0
-margin_right = 40.0
-margin_bottom = 500.0
+[node name="Button U" type="Button" parent="HBoxContainer"]
+margin_left = 487.0
+margin_right = 509.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "U"
 
-[node name="Button V" type="Button" parent="VBoxContainer"]
-margin_top = 504.0
-margin_right = 40.0
-margin_bottom = 524.0
+[node name="Button V" type="Button" parent="HBoxContainer"]
+margin_left = 513.0
+margin_right = 533.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "V"
 
-[node name="Button W" type="Button" parent="VBoxContainer"]
-margin_top = 528.0
-margin_right = 40.0
-margin_bottom = 548.0
+[node name="Button W" type="Button" parent="HBoxContainer"]
+margin_left = 537.0
+margin_right = 562.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "W"
 
-[node name="Button X" type="Button" parent="VBoxContainer"]
-margin_top = 552.0
-margin_right = 40.0
-margin_bottom = 572.0
+[node name="Button X" type="Button" parent="HBoxContainer"]
+margin_left = 566.0
+margin_right = 586.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "X"
 
-[node name="Button Y" type="Button" parent="VBoxContainer"]
-margin_top = 576.0
-margin_right = 40.0
-margin_bottom = 596.0
+[node name="Button Y" type="Button" parent="HBoxContainer"]
+margin_left = 590.0
+margin_right = 609.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "Y"
 
-[node name="Button Z" type="Button" parent="VBoxContainer"]
-margin_top = 600.0
-margin_right = 40.0
-margin_bottom = 620.0
+[node name="Button Z" type="Button" parent="HBoxContainer"]
+margin_left = 613.0
+margin_right = 633.0
+margin_bottom = 20.0
 shortcut_in_tooltip = false
 group = ExtResource( 2 )
 text = "Z"
+
+[node name="Pendu" type="AnimatedSprite" parent="."]
+position = Vector2( 200, 230 )
+frames = SubResource( 1 )
