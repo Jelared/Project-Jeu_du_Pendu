@@ -86,16 +86,34 @@ func test():
 				affichage_ += String(i)
 				$Affichage.text = affichage_
 			position_L = mot_separeL.find(lettre_clavier,position_L+1) # suite la boucle qui décale la position de 1 pour vérif
+			gagner()
 			print("ok")
 			print (mot_separeL.find(lettre_clavier))
 			print (affichage)
 
 
+#Comptage de perte/Game-Over
 func pendu():
-	$Pendu.frame = perdu
-	perdu += 1
-#affichage game over revoir
-#	if perdu = 6:
-#		print(perdu)
-	
-	
+	if perdu < 7 :
+		$Pendu.frame = perdu
+		perdu += 1
+	else :
+		$Gameover_Win.text = "Game Over"
+
+
+#Affichage gagner
+func gagner():
+	var a = mot_separeL
+	print("g")
+	var b = affichage
+	if a==b :
+		$Gameover_Win.text = "Gagner"
+####		bloquer le jeux à la fin à faire (possiblité de faire disparaitre les lettres à voir)
+		rejouer()
+
+#relance du jeux
+func rejouer():
+	var buttonR = Button.new()
+	buttonR.text = "Rejouer"
+#	buttonR.connect("pressed", self, "rejouer")
+	add_child(buttonR)

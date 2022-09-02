@@ -250,3 +250,9 @@ text = "Z"
 [node name="Pendu" type="AnimatedSprite" parent="."]
 position = Vector2( 200, 230 )
 frames = SubResource( 1 )
+
+[node name="Gameover_Win" type="RichTextLabel" parent="."]
+margin_left = 440.0
+margin_top = 174.0
+margin_right = 568.0
+margin_bottom = 214.0
