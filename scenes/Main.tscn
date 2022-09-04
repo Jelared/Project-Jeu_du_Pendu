@@ -1,14 +1,17 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Groupes/buttongroup_clavier.tres" type="ButtonGroup" id=2]
 [ext_resource path="res://Sprites/SP1.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/SP6.png" type="Texture" id=4]
+[ext_resource path="res://Sons/star-dreams-loop-by-musiclfiles-from-filmmusic-io.mp3" type="AudioStream" id=5]
 [ext_resource path="res://Sprites/SP3.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/SP2.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/SP4.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/SP5.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/SP0.png" type="Texture" id=10]
+[ext_resource path="res://Sons/confirm_style_1_001.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sons/error_style_2_001.wav" type="AudioStream" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -256,3 +259,16 @@ margin_left = 440.0
 margin_top = 174.0
 margin_right = 568.0
 margin_bottom = 214.0
+
+[node name="SonP" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -20.0
+autoplay = true
+
+[node name="Crédit" type="CanvasLayer" parent="."]
+
+[node name="Sonok" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="Sonno" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )

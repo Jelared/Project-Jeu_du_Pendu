@@ -41,6 +41,7 @@ func bouttons():
 
 #Le signal : met en mémoire la lettre (en minuscule) affiché sur le bouton et bloque le bouton qui ne peut plus etre utilisé
 func lettre():
+### lettre au clavier à voir si ajout
 	lettre_clavier = groupe_clavier.get_pressed_button().text.to_lower()
 	groupe_clavier.get_pressed_button().disabled = true
 	print(lettre_clavier)
@@ -75,11 +76,13 @@ func initialisation():
 func test():
 	var position_L = mot_separeL.find(lettre_clavier)
 	if position_L == -1:
+		$Sonno.play()
 		print("no")
 		print (position_L)
 		pendu()
 	else :
 		while position_L > -1: #boucle pour vérifier s'il existe plusieurs fois la lettre
+			$Sonok.play()
 			affichage_ = ""
 			affichage[position_L] = lettre_clavier #affichage de la lettre à la bonne position
 			for i in affichage:
@@ -97,8 +100,9 @@ func pendu():
 	if perdu < 7 :
 		$Pendu.frame = perdu
 		perdu += 1
-	else :
+	if perdu == 7 :
 		$Gameover_Win.text = "Game Over"
+		Brejouer()
 
 
 #Affichage gagner
@@ -108,12 +112,17 @@ func gagner():
 	var b = affichage
 	if a==b :
 		$Gameover_Win.text = "Gagner"
-####		bloquer le jeux à la fin à faire (possiblité de faire disparaitre les lettres à voir)
-		rejouer()
+		Brejouer()
 
-#relance du jeux
-func rejouer():
+
+#Bouton de relance du jeux
+func Brejouer():
+	$HBoxContainer.visible = false #dispartion des boutons des lettres
 	var buttonR = Button.new()
 	buttonR.text = "Rejouer"
-#	buttonR.connect("pressed", self, "rejouer")
+	buttonR.connect("pressed", self, "rejouer")
 	add_child(buttonR)
+	
+#Relance du jeux
+func rejouer():
+	get_tree()
