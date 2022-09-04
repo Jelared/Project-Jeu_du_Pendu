@@ -12,19 +12,7 @@ var affichage_ = "" #String avec les lettres trouvées
 var perdu = 1
 
 #Listes des mots
-var list = [
-	"apple",
-	"turnip",
-	"banana",
-	"clock",
-	"cup",
-	"flower",
-	"fork",
-	"glasses",
-	"oranage",
-	"pencil",
-	"spoon"
-	]
+var list = get_from_json("liste.json")
 
 
 func _ready():
@@ -125,4 +113,13 @@ func Brejouer():
 	
 #Relance du jeux
 func rejouer():
-	get_tree()
+	get_tree().reload_current_scene()
+	
+# Importation json
+func get_from_json(filename):
+	var file = File.new()
+	file.open(filename, File.READ)
+	var text = file.get_as_text()
+	var data = parse_json(text)
+	file.close()
+	return data
