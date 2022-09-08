@@ -4,7 +4,7 @@
 [ext_resource path="res://Groupes/buttongroup_clavier.tres" type="ButtonGroup" id=2]
 [ext_resource path="res://Sprites/SP1.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/SP6.png" type="Texture" id=4]
-[ext_resource path="res://Sons/star-dreams-loop-by-musiclfiles-from-filmmusic-io.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Sons/shades-of-spring-by-kevin-macleod-from-filmmusic-io.mp3" type="AudioStream" id=5]
 [ext_resource path="res://Sprites/SP3.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/SP2.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/SP4.png" type="Texture" id=8]
@@ -31,6 +31,7 @@ script = ExtResource( 1 )
 groupe_clavier = ExtResource( 2 )
 
 [node name="Page" type="Sprite" parent="."]
+visible = false
 position = Vector2( 536, 662 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 13 )
@@ -40,6 +41,7 @@ margin_left = 240.0
 margin_top = 30.0
 margin_right = 824.0
 margin_bottom = 94.0
+bbcode_enabled = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 127.0
@@ -267,7 +269,7 @@ margin_bottom = 214.0
 
 [node name="SonP" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = -20.0
+volume_db = -10.0
 autoplay = true
 
 [node name="Crédit" type="CanvasLayer" parent="."]

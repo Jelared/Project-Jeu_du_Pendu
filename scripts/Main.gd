@@ -56,7 +56,7 @@ func initialisation():
 		affichage.append("_ ")
 	for i in affichage:
 		affichage_ += String(i)
-		$Affichage.text = affichage_
+		$Affichage.bbcode_text = affichage_
 		print (affichage)
 
 
@@ -75,7 +75,7 @@ func test():
 			affichage[position_L] = lettre_clavier #affichage de la lettre à la bonne position
 			for i in affichage:
 				affichage_ += String(i)
-				$Affichage.text = affichage_
+				$Affichage.bbcode_text = affichage_
 			position_L = mot_separeL.find(lettre_clavier,position_L+1) # suite la boucle qui décale la position de 1 pour vérif
 			gagner()
 			print("ok")
@@ -89,7 +89,7 @@ func pendu():
 		$Pendu.frame = perdu
 		perdu += 1
 	if perdu == 7 :
-		$Gameover_Win.text = "Game Over"
+		$Gameover_Win.bbcode_text = "Game Over"
 		Brejouer()
 
 
@@ -99,7 +99,7 @@ func gagner():
 	print("g")
 	var b = affichage
 	if a==b :
-		$Gameover_Win.text = "Gagner"
+		$Gameover_Win.bbcode_text = "Gagner"
 		Brejouer()
 
 
