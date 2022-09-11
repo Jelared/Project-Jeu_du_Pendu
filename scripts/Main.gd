@@ -21,6 +21,9 @@ func _ready():
 	initialisation()
 	bouttons()
 
+#ajouter le timer (avant peut etre menu)
+func _process(delta):
+	pass
 
 #L'appuie sur un bouton envoie un signal 
 func bouttons():
@@ -56,7 +59,7 @@ func initialisation():
 		affichage.append("_ ")
 	for i in affichage:
 		affichage_ += String(i)
-		$Affichage.bbcode_text = affichage_
+		$Affichage.text = affichage_
 		print (affichage)
 
 
@@ -75,7 +78,7 @@ func test():
 			affichage[position_L] = lettre_clavier #affichage de la lettre à la bonne position
 			for i in affichage:
 				affichage_ += String(i)
-				$Affichage.bbcode_text = affichage_
+				$Affichage.text = affichage_
 			position_L = mot_separeL.find(lettre_clavier,position_L+1) # suite la boucle qui décale la position de 1 pour vérif
 			gagner()
 			print("ok")
@@ -89,7 +92,7 @@ func pendu():
 		$Pendu.frame = perdu
 		perdu += 1
 	if perdu == 7 :
-		$Gameover_Win.bbcode_text = "Game Over"
+		$Gameover_Win.bbcode_text = "[color=red]" + "Game Over" + "[/color]"
 		Brejouer()
 
 
@@ -99,7 +102,7 @@ func gagner():
 	print("g")
 	var b = affichage
 	if a==b :
-		$Gameover_Win.bbcode_text = "Gagner"
+		$Gameover_Win.bbcode_text = "[color=red]" + "Gagner" + "[/color]"
 		Brejouer()
 
 
