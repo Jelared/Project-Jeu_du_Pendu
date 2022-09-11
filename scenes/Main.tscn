@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Groupes/buttongroup_clavier.tres" type="ButtonGroup" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Sons/confirm_style_1_001.wav" type="AudioStream" id=11]
 [ext_resource path="res://Sons/error_style_2_001.wav" type="AudioStream" id=12]
 [ext_resource path="res://Sprites/Page.png" type="Texture" id=13]
+[ext_resource path="res://font/Maytra.ttf" type="DynamicFontData" id=14]
 
 [sub_resource type="DynamicFontData" id=2]
 font_path = "res://font/Holidays Homework.ttf"
@@ -28,6 +29,10 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 14 )
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -269,11 +274,21 @@ text = "Z"
 position = Vector2( 200, 230 )
 frames = SubResource( 1 )
 
-[node name="Gameover_Win" type="RichTextLabel" parent="."]
+[node name="Gameover" type="RichTextLabel" parent="."]
 margin_left = 440.0
 margin_top = 174.0
 margin_right = 568.0
 margin_bottom = 214.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 4 )
+
+[node name="Win" type="RichTextLabel" parent="."]
+margin_left = 440.0
+margin_top = 174.0
+margin_right = 568.0
+margin_bottom = 214.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 4 )
 
 [node name="Timer" type="RichTextLabel" parent="."]
 margin_right = 104.0

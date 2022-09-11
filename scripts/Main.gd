@@ -92,7 +92,7 @@ func pendu():
 		$Pendu.frame = perdu
 		perdu += 1
 	if perdu == 7 :
-		$Gameover_Win.bbcode_text = "[color=red]" + "Game Over" + "[/color]"
+		$Gameover.text = "Game Over"
 		Brejouer()
 
 
@@ -102,7 +102,7 @@ func gagner():
 	print("g")
 	var b = affichage
 	if a==b :
-		$Gameover_Win.bbcode_text = "[color=red]" + "Gagner" + "[/color]"
+		$Win.text = "GAGNER"
 		Brejouer()
 
 
