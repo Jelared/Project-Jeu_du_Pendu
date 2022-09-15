@@ -92,7 +92,7 @@ func pendu():
 		$Pendu.frame = perdu
 		perdu += 1
 	if perdu == 7 :
-		$Gameover.text = "Game Over"
+		$Gameover.text = "PERDU"
 		Brejouer()
 
 
@@ -102,7 +102,7 @@ func gagner():
 	print("g")
 	var b = affichage
 	if a==b :
-		$Win.text = "GAGNER"
+		$Win.text = "BRAVO"
 		Brejouer()
 
 
@@ -111,6 +111,10 @@ func Brejouer():
 	$HBoxContainer.visible = false #dispartion des boutons des lettres
 	var buttonR = Button.new()
 	buttonR.text = "Rejouer"
+	buttonR.anchor_left = 0.45
+	buttonR.anchor_top = 0.8
+	buttonR.rect_size.y = 50
+	buttonR.rect_size.x = 200
 	buttonR.connect("pressed", self, "rejouer")
 	add_child(buttonR)
 	
