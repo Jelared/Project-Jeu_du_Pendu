@@ -25,18 +25,26 @@ func _ready():
 func _process(delta):
 	pass
 
-#L'appuie sur un bouton envoie un signal 
+##Lettres avec boutons : L'appuie sur un bouton envoie un signal 
 func bouttons():
 	for button in groupe_clavier.get_buttons():
 		button.connect("pressed",self,"lettre")
 
+
 #Le signal : met en mémoire la lettre (en minuscule) affiché sur le bouton et bloque le bouton qui ne peut plus etre utilisé
 func lettre():
-### lettre au clavier à voir si ajout
 	lettre_clavier = groupe_clavier.get_pressed_button().text.to_lower()
 	groupe_clavier.get_pressed_button().disabled = true
 	print(lettre_clavier)
 	test()
+	
+##Lettres au clavier
+func _input(event):
+	if event.is_pressed():
+		var lettre_clavier = event.as_text().to_lower()
+		print(lettre_clavier)
+		lettre()
+		test()
 	
 	
 #Choix d'un mot dans une liste  : aléatoire randi(), entre %, 0 et le nombre total de mot dans la liste size()
