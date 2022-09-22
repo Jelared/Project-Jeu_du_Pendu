@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Groupes/buttongroup_clavier.tres" type="ButtonGroup" id=2]
@@ -21,6 +21,162 @@ font_path = "res://font/Holidays Homework.ttf"
 [sub_resource type="DynamicFont" id=3]
 size = 40
 font_data = SubResource( 2 )
+
+[sub_resource type="InputEventKey" id=5]
+scancode = 65
+
+[sub_resource type="ShortCut" id=6]
+shortcut = SubResource( 5 )
+
+[sub_resource type="InputEventKey" id=7]
+scancode = 66
+
+[sub_resource type="ShortCut" id=8]
+shortcut = SubResource( 7 )
+
+[sub_resource type="InputEventKey" id=9]
+scancode = 67
+
+[sub_resource type="ShortCut" id=10]
+shortcut = SubResource( 9 )
+
+[sub_resource type="InputEventKey" id=11]
+scancode = 68
+
+[sub_resource type="ShortCut" id=12]
+shortcut = SubResource( 11 )
+
+[sub_resource type="InputEventKey" id=13]
+scancode = 69
+
+[sub_resource type="ShortCut" id=14]
+shortcut = SubResource( 13 )
+
+[sub_resource type="InputEventKey" id=15]
+scancode = 70
+
+[sub_resource type="ShortCut" id=16]
+shortcut = SubResource( 15 )
+
+[sub_resource type="InputEventKey" id=17]
+scancode = 71
+
+[sub_resource type="ShortCut" id=18]
+shortcut = SubResource( 17 )
+
+[sub_resource type="InputEventKey" id=19]
+scancode = 72
+
+[sub_resource type="ShortCut" id=20]
+shortcut = SubResource( 19 )
+
+[sub_resource type="InputEventKey" id=21]
+scancode = 73
+
+[sub_resource type="ShortCut" id=22]
+shortcut = SubResource( 21 )
+
+[sub_resource type="InputEventKey" id=23]
+scancode = 74
+
+[sub_resource type="ShortCut" id=24]
+shortcut = SubResource( 23 )
+
+[sub_resource type="InputEventKey" id=25]
+scancode = 75
+
+[sub_resource type="ShortCut" id=26]
+shortcut = SubResource( 25 )
+
+[sub_resource type="InputEventKey" id=27]
+scancode = 76
+
+[sub_resource type="ShortCut" id=28]
+shortcut = SubResource( 27 )
+
+[sub_resource type="InputEventKey" id=29]
+scancode = 77
+
+[sub_resource type="ShortCut" id=30]
+shortcut = SubResource( 29 )
+
+[sub_resource type="InputEventKey" id=31]
+scancode = 78
+
+[sub_resource type="ShortCut" id=32]
+shortcut = SubResource( 31 )
+
+[sub_resource type="InputEventKey" id=33]
+scancode = 79
+
+[sub_resource type="ShortCut" id=34]
+shortcut = SubResource( 33 )
+
+[sub_resource type="InputEventKey" id=35]
+scancode = 80
+
+[sub_resource type="ShortCut" id=36]
+shortcut = SubResource( 35 )
+
+[sub_resource type="InputEventKey" id=37]
+scancode = 81
+
+[sub_resource type="ShortCut" id=38]
+shortcut = SubResource( 37 )
+
+[sub_resource type="InputEventKey" id=39]
+scancode = 82
+
+[sub_resource type="ShortCut" id=40]
+shortcut = SubResource( 39 )
+
+[sub_resource type="InputEventKey" id=41]
+scancode = 83
+
+[sub_resource type="ShortCut" id=42]
+shortcut = SubResource( 41 )
+
+[sub_resource type="InputEventKey" id=43]
+scancode = 84
+
+[sub_resource type="ShortCut" id=44]
+shortcut = SubResource( 43 )
+
+[sub_resource type="InputEventKey" id=45]
+scancode = 85
+
+[sub_resource type="ShortCut" id=46]
+shortcut = SubResource( 45 )
+
+[sub_resource type="InputEventKey" id=47]
+scancode = 86
+
+[sub_resource type="ShortCut" id=48]
+shortcut = SubResource( 47 )
+
+[sub_resource type="InputEventKey" id=49]
+scancode = 87
+
+[sub_resource type="ShortCut" id=50]
+shortcut = SubResource( 49 )
+
+[sub_resource type="InputEventKey" id=51]
+scancode = 88
+
+[sub_resource type="ShortCut" id=52]
+shortcut = SubResource( 51 )
+
+[sub_resource type="InputEventKey" id=53]
+scancode = 89
+
+[sub_resource type="ShortCut" id=54]
+shortcut = SubResource( 53 )
+
+[sub_resource type="InputEventKey" id=55]
+scancode = 90
+
+[sub_resource type="ShortCut" id=56]
+shortcut = SubResource( 55 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -56,284 +212,294 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 
-[node name="Button_A" type="Button" parent="."]
+[node name="Container" type="Container" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Button_A" type="Button" parent="Container"]
 margin_left = 131.0
 margin_top = 442.0
 margin_right = 171.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 6 )
 group = ExtResource( 2 )
 text = "A"
-icon_align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Button_B" type="Button" parent="."]
+[node name="Button_B" type="Button" parent="Container"]
 margin_left = 179.0
 margin_top = 442.0
 margin_right = 219.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 8 )
 group = ExtResource( 2 )
 text = "B"
-icon_align = 1
 
-[node name="Button_C" type="Button" parent="."]
+[node name="Button_C" type="Button" parent="Container"]
 margin_left = 226.0
 margin_top = 442.0
 margin_right = 266.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 10 )
 group = ExtResource( 2 )
 text = "C"
-icon_align = 1
 
-[node name="Button_D" type="Button" parent="."]
+[node name="Button_D" type="Button" parent="Container"]
 margin_left = 273.0
 margin_top = 442.0
 margin_right = 313.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 12 )
 group = ExtResource( 2 )
 text = "D"
-icon_align = 1
 
-[node name="Button_E" type="Button" parent="."]
+[node name="Button_E" type="Button" parent="Container"]
 margin_left = 319.0
 margin_top = 442.0
 margin_right = 359.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 14 )
 group = ExtResource( 2 )
 text = "E"
-icon_align = 1
 
-[node name="Button_F" type="Button" parent="."]
+[node name="Button_F" type="Button" parent="Container"]
 margin_left = 365.0
 margin_top = 442.0
 margin_right = 405.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 16 )
 group = ExtResource( 2 )
 text = "F"
-icon_align = 1
 
-[node name="Button_G" type="Button" parent="."]
+[node name="Button_G" type="Button" parent="Container"]
 margin_left = 412.0
 margin_top = 442.0
 margin_right = 452.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 18 )
 group = ExtResource( 2 )
 text = "G"
-icon_align = 1
 
-[node name="Button_H" type="Button" parent="."]
+[node name="Button_H" type="Button" parent="Container"]
 margin_left = 459.0
 margin_top = 442.0
 margin_right = 499.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 20 )
 group = ExtResource( 2 )
 text = "H"
-icon_align = 1
 
-[node name="Button_I" type="Button" parent="."]
+[node name="Button_I" type="Button" parent="Container"]
 margin_left = 506.0
 margin_top = 442.0
 margin_right = 546.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 22 )
 group = ExtResource( 2 )
 text = "I"
-icon_align = 1
 
-[node name="Button_J" type="Button" parent="."]
-margin_left = 556.0
+[node name="Button_J" type="Button" parent="Container"]
+margin_left = 553.0
 margin_top = 442.0
-margin_right = 596.0
+margin_right = 593.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 24 )
 group = ExtResource( 2 )
 text = "J"
-icon_align = 1
 
-[node name="Button_K" type="Button" parent="."]
-margin_left = 556.0
+[node name="Button_K" type="Button" parent="Container"]
+margin_left = 601.0
 margin_top = 442.0
-margin_right = 596.0
+margin_right = 641.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 26 )
 group = ExtResource( 2 )
 text = "K"
-icon_align = 1
 
-[node name="Button_L" type="Button" parent="."]
-margin_left = 602.0
-margin_top = 442.0
-margin_right = 642.0
-margin_bottom = 482.0
-shortcut_in_tooltip = false
-group = ExtResource( 2 )
-text = "L"
-icon_align = 1
-
-[node name="Button_M" type="Button" parent="."]
+[node name="Button_L" type="Button" parent="Container"]
 margin_left = 648.0
 margin_top = 442.0
 margin_right = 688.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 28 )
 group = ExtResource( 2 )
-text = "M"
-icon_align = 1
+text = "L"
 
-[node name="Button_N" type="Button" parent="."]
+[node name="Button_M" type="Button" parent="Container"]
 margin_left = 695.0
 margin_top = 442.0
 margin_right = 735.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 30 )
 group = ExtResource( 2 )
-text = "N"
-icon_align = 1
+text = "M"
 
-[node name="Button_O" type="Button" parent="."]
+[node name="Button_N" type="Button" parent="Container"]
 margin_left = 743.0
 margin_top = 442.0
 margin_right = 783.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 32 )
+group = ExtResource( 2 )
+text = "N"
+
+[node name="Button_O" type="Button" parent="Container"]
+margin_left = 791.0
+margin_top = 442.0
+margin_right = 831.0
+margin_bottom = 482.0
+shortcut_in_tooltip = false
+shortcut = SubResource( 34 )
 group = ExtResource( 2 )
 text = "O"
-icon_align = 1
 
-[node name="Button_P" type="Button" parent="."]
-margin_left = 790.0
+[node name="Button_P" type="Button" parent="Container"]
+margin_left = 838.0
 margin_top = 442.0
-margin_right = 830.0
+margin_right = 878.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 36 )
 group = ExtResource( 2 )
 text = "P"
-icon_align = 1
 
-[node name="Button_Q" type="Button" parent="."]
-margin_left = 837.0
-margin_top = 442.0
-margin_right = 877.0
-margin_bottom = 482.0
-shortcut_in_tooltip = false
-group = ExtResource( 2 )
-text = "Q"
-icon_align = 1
-
-[node name="Button_R" type="Button" parent="."]
+[node name="Button_Q" type="Button" parent="Container"]
 margin_left = 885.0
 margin_top = 442.0
 margin_right = 925.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 38 )
+group = ExtResource( 2 )
+text = "Q"
+
+[node name="Button_R" type="Button" parent="Container"]
+margin_left = 933.0
+margin_top = 442.0
+margin_right = 973.0
+margin_bottom = 482.0
+shortcut_in_tooltip = false
+shortcut = SubResource( 40 )
 group = ExtResource( 2 )
 text = "R"
-icon_align = 1
 
-[node name="Button S" type="Button" parent="."]
-margin_left = 932.0
+[node name="Button S" type="Button" parent="Container"]
+margin_left = 980.0
 margin_top = 442.0
-margin_right = 972.0
+margin_right = 1020.0
 margin_bottom = 482.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 42 )
 group = ExtResource( 2 )
 text = "S"
-icon_align = 1
 
-[node name="Button T" type="Button" parent="."]
-margin_left = 978.0
-margin_top = 442.0
-margin_right = 1018.0
-margin_bottom = 482.0
+[node name="Button T" type="Button" parent="Container"]
+margin_left = 389.0
+margin_top = 523.0
+margin_right = 429.0
+margin_bottom = 563.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 44 )
 group = ExtResource( 2 )
 text = "T"
-icon_align = 1
 
-[node name="Button U" type="Button" parent="."]
-margin_left = 413.0
+[node name="Button U" type="Button" parent="Container"]
+margin_left = 435.0
 margin_top = 523.0
-margin_right = 453.0
+margin_right = 475.0
 margin_bottom = 563.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 46 )
 group = ExtResource( 2 )
 text = "U"
-icon_align = 1
 
-[node name="Button V" type="Button" parent="."]
-margin_left = 459.0
+[node name="Button V" type="Button" parent="Container"]
+margin_left = 481.0
 margin_top = 523.0
-margin_right = 499.0
+margin_right = 521.0
 margin_bottom = 563.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 48 )
 group = ExtResource( 2 )
 text = "V"
-icon_align = 1
 
-[node name="Button W" type="Button" parent="."]
-margin_left = 506.0
+[node name="Button W" type="Button" parent="Container"]
+margin_left = 528.0
 margin_top = 523.0
-margin_right = 546.0
+margin_right = 568.0
 margin_bottom = 563.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 50 )
 group = ExtResource( 2 )
 text = "W"
-icon_align = 1
 
-[node name="Button X" type="Button" parent="."]
-margin_left = 554.0
+[node name="Button X" type="Button" parent="Container"]
+margin_left = 576.0
 margin_top = 523.0
-margin_right = 594.0
+margin_right = 616.0
 margin_bottom = 563.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 52 )
 group = ExtResource( 2 )
 text = "X"
-icon_align = 1
 
-[node name="Button Y" type="Button" parent="."]
-margin_left = 601.0
+[node name="Button Y" type="Button" parent="Container"]
+margin_left = 623.0
 margin_top = 523.0
-margin_right = 641.0
+margin_right = 663.0
 margin_bottom = 563.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 54 )
 group = ExtResource( 2 )
 text = "Y"
-icon_align = 1
 
-[node name="Button Z" type="Button" parent="."]
-margin_left = 648.0
+[node name="Button Z" type="Button" parent="Container"]
+margin_left = 670.0
 margin_top = 523.0
-margin_right = 688.0
+margin_right = 710.0
 margin_bottom = 563.0
 shortcut_in_tooltip = false
+shortcut = SubResource( 56 )
 group = ExtResource( 2 )
 text = "Z"
-icon_align = 1
 
 [node name="Pendu" type="AnimatedSprite" parent="."]
 position = Vector2( 200, 230 )
 frames = SubResource( 1 )
 
 [node name="Gameover" type="RichTextLabel" parent="."]
-margin_left = 440.0
-margin_top = 174.0
-margin_right = 568.0
-margin_bottom = 214.0
-custom_colors/default_color = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 124.0
+margin_right = 133.0
+margin_bottom = 164.0
+custom_colors/default_color = Color( 0.94902, 0.0941176, 0.0941176, 1 )
 custom_fonts/normal_font = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Win" type="RichTextLabel" parent="."]
 margin_left = 5.0
 margin_top = 124.0
 margin_right = 133.0
 margin_bottom = 164.0
-custom_colors/default_color = Color( 0.952941, 0.0627451, 0.0627451, 1 )
+custom_colors/default_color = Color( 0.176471, 0.65098, 0.113725, 1 )
 custom_fonts/normal_font = SubResource( 4 )
 
 [node name="Timer" type="RichTextLabel" parent="."]
