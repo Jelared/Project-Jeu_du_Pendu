@@ -1,4 +1,5 @@
-##Main
+##Main 2
+
 
 extends Control
 
@@ -104,8 +105,8 @@ func gagner():
 	print("g")
 	var b = affichage
 	if a==b :
-		$Win.text = "BRAVO"
-		Brejouer()
+		$Win.text = "nouveau mot"
+		rejouer()######
 
 
 #Bouton de relance du jeux
