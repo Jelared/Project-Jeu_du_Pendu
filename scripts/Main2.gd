@@ -13,20 +13,29 @@ var mot_separeL = [] #array avec les lettres séparées
 var affichage = [] #Array avec les lettres trouvées
 var affichage_ = "" #String avec les lettres trouvées
 var perdu = 1
+var time = 0 #Début du timer
+var score = 0 #score
 
 #Listes des mots
 var list = get_from_json("liste.json")
 
 
+#Démarrage des fonctions
 func _ready():
 	choix_mot()
 	separation_mot()
 	initialisation()
 	bouttons()
 
-#ajouter le timer (avant peut etre menu)
+#Chronomètre
 func _process(delta):
-	pass
+	time += delta
+	var secs = fmod(time,60)
+	var mins = fmod (time,60*60)/60
+	
+	var timed = "%02d : %02d" % [mins,secs]
+	$CanvasLayer/temps.text = timed
+	
 
 ##Lettres avec boutons ou clavier (grâce au raccourcie dans les bouttons) : L'appuie sur un bouton envoie un signal 
 func bouttons():
@@ -105,8 +114,7 @@ func gagner():
 	print("g")
 	var b = affichage
 	if a==b :
-		$Win.text = "nouveau mot"
-		rejouer()######
+		relance()
 
 
 #Bouton de relance du jeux
@@ -122,8 +130,9 @@ func Brejouer():
 	add_child(buttonR)
 	
 #Relance du jeux
-func rejouer():
+func relance():
 	get_tree().reload_current_scene()
+
 	
 # Importation json
 func get_from_json(filename):

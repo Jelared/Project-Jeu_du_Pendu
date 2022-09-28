@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://scripts/Main2.gd" type="Script" id=1]
 [ext_resource path="res://Groupes/buttongroup_clavier.tres" type="ButtonGroup" id=2]
@@ -15,6 +15,22 @@
 [ext_resource path="res://Sprites/Page.png" type="Texture" id=13]
 [ext_resource path="res://font/Fin_font.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://font/Interface_font.ttf" type="DynamicFontData" id=15]
+
+[sub_resource type="DynamicFont" id=60]
+size = 60
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=63]
+size = 20
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=61]
+size = 20
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=62]
+size = 22
+font_data = ExtResource( 15 )
 
 [sub_resource type="DynamicFontData" id=2]
 font_path = "res://font/Affichage font.ttf"
@@ -200,22 +216,71 @@ animations = [ {
 size = 30
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=60]
-size = 60
-font_data = ExtResource( 15 )
-
 [node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 2.0
 margin_bottom = 2.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 groupe_clavier = ExtResource( 2 )
 
 [node name="Page" type="Sprite" parent="."]
 position = Vector2( 546, 662 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 13 )
+
+[node name="Titre" type="Label" parent="."]
+margin_left = 125.0
+margin_right = 1024.0
+margin_bottom = 71.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 60 )
+text = "LE PENDU"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 63 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="temps" type="Label" parent="CanvasLayer"]
+margin_left = 1.0
+margin_top = 81.0
+margin_right = 117.0
+margin_bottom = 123.0
+custom_colors/font_color = Color( 0.878431, 0.0745098, 0.0745098, 1 )
+custom_fonts/font = SubResource( 61 )
+text = "00:00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Temps t" type="Label" parent="CanvasLayer"]
+margin_left = 6.0
+margin_top = 46.0
+margin_right = 121.0
+margin_bottom = 82.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 62 )
+text = "Chrono"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Affichage" type="RichTextLabel" parent="."]
 margin_left = 376.0
@@ -554,12 +619,3 @@ stream = ExtResource( 11 )
 
 [node name="Sonno" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
-
-[node name="Titre" type="Label" parent="."]
-margin_left = 125.0
-margin_right = 1024.0
-margin_bottom = 71.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 60 )
-text = "LE PENDU"
-align = 1

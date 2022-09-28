@@ -110,7 +110,7 @@ func gagner():
 
 #Bouton de relance du jeux
 func Brejouer():
-	$Container.visible = false #dispartion des boutons des lettres
+	$Container.queue_free() #dispartion des boutons des lettres
 	var buttonR = Button.new()
 	buttonR.text = "Rejouer"
 	buttonR.anchor_left = 0.45
