@@ -69,13 +69,13 @@ func initialisation():
 func test():
 	var position_L = mot_separeL.find(lettre_clavier)
 	if position_L == -1:
-		$Sonno.play()
+		Musicontroler.rate()
 		print("no")
 		print (position_L)
 		pendu()
 	else :
 		while position_L > -1: #boucle pour vérifier s'il existe plusieurs fois la lettre
-			$Sonok.play()
+			Musicontroler.reussi()
 			affichage_ = ""
 			affichage[position_L] = lettre_clavier #affichage de la lettre à la bonne position
 			for i in affichage:

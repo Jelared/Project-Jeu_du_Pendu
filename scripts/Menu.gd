@@ -3,6 +3,7 @@ extends Control
 
 export var main_game_scenes : PackedScene
 export var main2_game_scenes : PackedScene
+var chronometre = 0
 
 
 
