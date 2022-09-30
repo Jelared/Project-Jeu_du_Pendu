@@ -21,7 +21,8 @@ default_bus_layout=""
 [autoload]
 
 Musicontroler="*res://Autoload/Musicontroler.tscn"
-Chrono="*res://Autoload/chrono.tscn"
+Score="*res://Autoload/Score.tscn"
+GameValue="*res://Autoload/GameValue.tscn"
 
 [display]
 

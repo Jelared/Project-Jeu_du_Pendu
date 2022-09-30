@@ -26,16 +26,16 @@ func _ready():
 	separation_mot()
 	initialisation()
 	bouttons()
+	frame()
 
-#Chronomètre
-#func _process(delta):
-#	time += delta
-#	var secs = fmod(time,60)
-#	var mins = fmod (time,60*60)/60
-#
-#	var timed = "%02d : %02d" % [mins,secs]
-#	$CanvasLayer/temps.text = timed
-	
+#appel de la frame sauvegardé (à partir de l'autoload)
+func frame():
+	var Frame = GameValue.FrameValeur
+	$Pendu.frame = Frame
+
+#Chronomètre (à partir de l'autoload)
+func _process(delta):
+	GameValue.chronodepart(delta)
 
 ##Lettres avec boutons ou clavier (grâce au raccourcie dans les bouttons) : L'appuie sur un bouton envoie un signal 
 func bouttons():
@@ -101,7 +101,10 @@ func test():
 #Comptage de perte/Game-Over
 func pendu():
 	if perdu < 7 :
-		$Pendu.frame = perdu
+		#Mise en mémoire de la frame
+		GameValue.addframe()
+		var Frame = GameValue.FrameValeur
+		$Pendu.frame = Frame
 		perdu += 1
 	if perdu == 7 :
 		$Gameover.text = "PERDU"
@@ -114,6 +117,9 @@ func gagner():
 	print("g")
 	var b = affichage
 	if a==b :
+		GameValue.addpoint()
+		$Motsuivant.text = "MOT SUIVANT"
+		yield(get_tree().create_timer(1.0), "timeout")
 		relance()
 
 
@@ -129,7 +135,15 @@ func Brejouer():
 	buttonR.connect("pressed", self, "rejouer")
 	add_child(buttonR)
 	
-#Relance du jeux
+#redemarrage du jeux
+func rejouer():
+	get_tree().reload_current_scene()
+	GameValue.FrameValeur = 0
+	GameValue.score = 0
+	GameValue.secs = 0
+	GameValue.mins = 0
+	
+#mot suivant après avaoir gagner un point de score
 func relance():
 	get_tree().reload_current_scene()
 

@@ -5,31 +5,13 @@
 [ext_resource path="res://scenes/Main.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=4]
 [ext_resource path="res://scenes/Main2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Credit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Styles/Menu_boutton.tres" type="StyleBox" id=7]
+[ext_resource path="res://Styles/Menu_norm.tres" type="StyleBox" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
 font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.235294, 0.227451, 0.266667, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.235294, 0.227451, 0.266667, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.235294, 0.227451, 0.266667, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [sub_resource type="DynamicFont" id=2]
 size = 60
@@ -39,6 +21,7 @@ font_data = ExtResource( 2 )
 script = ExtResource( 4 )
 main_game_scenes = ExtResource( 3 )
 main2_game_scenes = ExtResource( 5 )
+Credit_game_scenes = ExtResource( 6 )
 
 [node name="Page" type="Sprite" parent="."]
 position = Vector2( 546, 662 )
@@ -70,7 +53,8 @@ margin_top = 59.0
 margin_right = 599.0
 margin_bottom = 107.0
 custom_fonts/font = SubResource( 1 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/normal = ExtResource( 8 )
 text = "Partie classique"
 
 [node name="points" type="Button" parent="MarginContainer/HBoxContainer"]
@@ -78,7 +62,8 @@ margin_top = 137.0
 margin_right = 599.0
 margin_bottom = 185.0
 custom_fonts/font = SubResource( 1 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/normal = ExtResource( 8 )
 text = "Partie avec points"
 
 [node name="Credit" type="Button" parent="MarginContainer/HBoxContainer"]
@@ -86,7 +71,8 @@ margin_top = 215.0
 margin_right = 599.0
 margin_bottom = 263.0
 custom_fonts/font = SubResource( 1 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/normal = ExtResource( 8 )
 text = "Credits"
 
 [node name="Titre" type="Label" parent="."]
@@ -100,3 +86,4 @@ align = 1
 
 [connection signal="button_up" from="MarginContainer/HBoxContainer/classique" to="." method="_on_classique_button_up"]
 [connection signal="button_up" from="MarginContainer/HBoxContainer/points" to="." method="_on_points_button_up"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/Credit" to="." method="_on_Credit_button_up"]

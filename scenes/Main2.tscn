@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://scripts/Main2.gd" type="Script" id=1]
 [ext_resource path="res://Groupes/buttongroup_clavier.tres" type="ButtonGroup" id=2]
@@ -15,18 +15,6 @@
 
 [sub_resource type="DynamicFont" id=60]
 size = 60
-font_data = ExtResource( 15 )
-
-[sub_resource type="DynamicFont" id=63]
-size = 20
-font_data = ExtResource( 15 )
-
-[sub_resource type="DynamicFont" id=61]
-size = 20
-font_data = ExtResource( 15 )
-
-[sub_resource type="DynamicFont" id=62]
-size = 22
 font_data = ExtResource( 15 )
 
 [sub_resource type="DynamicFontData" id=2]
@@ -219,9 +207,6 @@ anchor_bottom = 1.0
 margin_top = 2.0
 margin_bottom = 2.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 groupe_clavier = ExtResource( 2 )
 
 [node name="Page" type="Sprite" parent="."]
@@ -237,44 +222,6 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 60 )
 text = "LE PENDU"
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Score" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 63 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="temps" type="Label" parent="CanvasLayer"]
-margin_left = 1.0
-margin_top = 81.0
-margin_right = 117.0
-margin_bottom = 123.0
-custom_colors/font_color = Color( 0.878431, 0.0745098, 0.0745098, 1 )
-custom_fonts/font = SubResource( 61 )
-text = "00:00"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Temps t" type="Label" parent="CanvasLayer"]
-margin_left = 6.0
-margin_top = 46.0
-margin_right = 121.0
-margin_bottom = 82.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 62 )
-text = "Chrono"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -592,11 +539,8 @@ margin_right = 133.0
 margin_bottom = 164.0
 custom_colors/default_color = Color( 0.94902, 0.0941176, 0.0941176, 1 )
 custom_fonts/normal_font = SubResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Win" type="RichTextLabel" parent="."]
+[node name="Motsuivant" type="RichTextLabel" parent="."]
 margin_left = 5.0
 margin_top = 124.0
 margin_right = 133.0
