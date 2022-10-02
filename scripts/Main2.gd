@@ -15,6 +15,7 @@ var affichage_ = "" #String avec les lettres trouvées
 var perdu = 1
 var time = 0 #Début du timer
 var score = 0 #score
+var top_on = false
 
 #Listes des mots
 var list = get_from_json("liste.json")
@@ -22,20 +23,29 @@ var list = get_from_json("liste.json")
 
 #Démarrage des fonctions
 func _ready():
+	$Menu.grab_focus()
 	choix_mot()
 	separation_mot()
 	initialisation()
 	bouttons()
 	frame()
+	affichage_chr_scor()
+	top()
+
 
 #appel de la frame sauvegardé (à partir de l'autoload)
 func frame():
 	var Frame = GameValue.FrameValeur
 	$Pendu.frame = Frame
+	
+func affichage_chr_scor() : 
+	GameValue.affichage_game_value()
 
 #Chronomètre (à partir de l'autoload)
-func _process(delta):
-	GameValue.chronodepart(delta)
+func top():
+	if (top_on):
+		GameValue.chronodepart()
+
 
 ##Lettres avec boutons ou clavier (grâce au raccourcie dans les bouttons) : L'appuie sur un bouton envoie un signal 
 func bouttons():
@@ -108,7 +118,7 @@ func pendu():
 		perdu += 1
 	if perdu == 7 :
 		$Gameover.text = "PERDU"
-		Brejouer()
+		recommencer()
 
 
 #Affichage gagner
@@ -123,8 +133,8 @@ func gagner():
 		relance()
 
 
-#Bouton de relance du jeux
-func Brejouer():
+#Bouton de relance du jeux en entier
+func recommencer():
 	$Container.visible = false #dispartion des boutons des lettres
 	var buttonR = Button.new()
 	buttonR.text = "Rejouer"
@@ -135,16 +145,15 @@ func Brejouer():
 	buttonR.connect("pressed", self, "rejouer")
 	add_child(buttonR)
 	
-#redemarrage du jeux
+#redemarrage du jeux en entier
 func rejouer():
+	top_on = true
+	GameValue.reset()
 	get_tree().reload_current_scene()
-	GameValue.FrameValeur = 0
-	GameValue.score = 0
-	GameValue.secs = 0
-	GameValue.mins = 0
 	
 #mot suivant après avaoir gagner un point de score
 func relance():
+	top_on = false
 	get_tree().reload_current_scene()
 
 	
@@ -156,3 +165,7 @@ func get_from_json(filename):
 	var data = parse_json(text)
 	file.close()
 	return data
+	
+#Boutton de retour menu
+func _on_Menu_button_up() -> void:
+	get_tree().change_scene("res://scenes/Menu.tscn")

@@ -5,6 +5,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Page" type="Sprite" parent="."]
+visible = false
 position = Vector2( 546, 662 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )

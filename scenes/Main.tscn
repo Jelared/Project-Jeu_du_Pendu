@@ -1,20 +1,18 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Groupes/buttongroup_clavier.tres" type="ButtonGroup" id=2]
 [ext_resource path="res://Sprites/SP1.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/SP6.png" type="Texture" id=4]
-[ext_resource path="res://Sons/shades-of-spring-by-kevin-macleod-from-filmmusic-io.mp3" type="AudioStream" id=5]
 [ext_resource path="res://Sprites/SP3.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/SP2.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/SP4.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/SP5.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/SP0.png" type="Texture" id=10]
-[ext_resource path="res://Sons/confirm_style_1_001.wav" type="AudioStream" id=11]
-[ext_resource path="res://Sons/error_style_2_001.wav" type="AudioStream" id=12]
-[ext_resource path="res://Sprites/Page.png" type="Texture" id=13]
 [ext_resource path="res://font/Fin_font.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://font/Interface_font.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Styles/Menu_boutton.tres" type="StyleBox" id=16]
+[ext_resource path="res://Styles/Menu_norm.tres" type="StyleBox" id=17]
 
 [sub_resource type="DynamicFontData" id=2]
 font_path = "res://font/Affichage font.ttf"
@@ -204,6 +202,9 @@ font_data = ExtResource( 14 )
 size = 60
 font_data = ExtResource( 15 )
 
+[sub_resource type="DynamicFont" id=61]
+font_data = ExtResource( 15 )
+
 [node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -211,11 +212,6 @@ margin_top = 2.0
 margin_bottom = 2.0
 script = ExtResource( 1 )
 groupe_clavier = ExtResource( 2 )
-
-[node name="Page" type="Sprite" parent="."]
-position = Vector2( 546, 662 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 13 )
 
 [node name="Affichage" type="RichTextLabel" parent="."]
 margin_left = 376.0
@@ -236,6 +232,8 @@ margin_top = 442.0
 margin_right = 171.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 57 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 6 )
 group = ExtResource( 2 )
@@ -250,6 +248,8 @@ margin_top = 442.0
 margin_right = 219.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 58 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 8 )
 group = ExtResource( 2 )
@@ -261,6 +261,8 @@ margin_top = 442.0
 margin_right = 266.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 58 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 10 )
 group = ExtResource( 2 )
@@ -272,6 +274,8 @@ margin_top = 442.0
 margin_right = 313.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 58 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 12 )
 group = ExtResource( 2 )
@@ -283,6 +287,8 @@ margin_top = 442.0
 margin_right = 359.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 58 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 14 )
 group = ExtResource( 2 )
@@ -294,6 +300,8 @@ margin_top = 442.0
 margin_right = 405.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 58 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 16 )
 group = ExtResource( 2 )
@@ -305,6 +313,8 @@ margin_top = 442.0
 margin_right = 452.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 58 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 18 )
 group = ExtResource( 2 )
@@ -316,6 +326,8 @@ margin_top = 442.0
 margin_right = 499.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 20 )
 group = ExtResource( 2 )
@@ -327,6 +339,8 @@ margin_top = 442.0
 margin_right = 546.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 22 )
 group = ExtResource( 2 )
@@ -338,6 +352,8 @@ margin_top = 442.0
 margin_right = 593.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 24 )
 group = ExtResource( 2 )
@@ -349,6 +365,8 @@ margin_top = 442.0
 margin_right = 641.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 26 )
 group = ExtResource( 2 )
@@ -360,6 +378,8 @@ margin_top = 442.0
 margin_right = 688.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 28 )
 group = ExtResource( 2 )
@@ -371,6 +391,8 @@ margin_top = 442.0
 margin_right = 735.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 30 )
 group = ExtResource( 2 )
@@ -382,6 +404,8 @@ margin_top = 442.0
 margin_right = 783.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 32 )
 group = ExtResource( 2 )
@@ -393,6 +417,8 @@ margin_top = 442.0
 margin_right = 831.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 34 )
 group = ExtResource( 2 )
@@ -404,6 +430,8 @@ margin_top = 442.0
 margin_right = 878.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 36 )
 group = ExtResource( 2 )
@@ -415,6 +443,8 @@ margin_top = 442.0
 margin_right = 925.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 38 )
 group = ExtResource( 2 )
@@ -426,6 +456,8 @@ margin_top = 442.0
 margin_right = 973.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 40 )
 group = ExtResource( 2 )
@@ -437,6 +469,8 @@ margin_top = 442.0
 margin_right = 1020.0
 margin_bottom = 482.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 42 )
 group = ExtResource( 2 )
@@ -448,6 +482,8 @@ margin_top = 523.0
 margin_right = 429.0
 margin_bottom = 563.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 44 )
 group = ExtResource( 2 )
@@ -459,6 +495,8 @@ margin_top = 523.0
 margin_right = 475.0
 margin_bottom = 563.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 46 )
 group = ExtResource( 2 )
@@ -470,6 +508,8 @@ margin_top = 523.0
 margin_right = 521.0
 margin_bottom = 563.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 48 )
 group = ExtResource( 2 )
@@ -481,6 +521,8 @@ margin_top = 523.0
 margin_right = 568.0
 margin_bottom = 563.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 50 )
 group = ExtResource( 2 )
@@ -492,6 +534,8 @@ margin_top = 523.0
 margin_right = 616.0
 margin_bottom = 563.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 52 )
 group = ExtResource( 2 )
@@ -503,6 +547,8 @@ margin_top = 523.0
 margin_right = 663.0
 margin_bottom = 563.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 54 )
 group = ExtResource( 2 )
@@ -514,6 +560,8 @@ margin_top = 523.0
 margin_right = 710.0
 margin_bottom = 563.0
 custom_fonts/font = SubResource( 59 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 56 )
 group = ExtResource( 2 )
@@ -542,18 +590,7 @@ margin_bottom = 164.0
 custom_colors/default_color = Color( 0.176471, 0.65098, 0.113725, 1 )
 custom_fonts/normal_font = SubResource( 4 )
 
-[node name="SonP" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
-volume_db = -10.0
-autoplay = true
-
 [node name="Crédit" type="CanvasLayer" parent="."]
-
-[node name="Sonok" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
-
-[node name="Sonno" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
 
 [node name="Titre" type="Label" parent="."]
 margin_left = 125.0
@@ -563,3 +600,15 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 60 )
 text = "LE PENDU"
 align = 1
+
+[node name="Menu" type="Button" parent="."]
+margin_left = 5.0
+margin_top = 527.0
+margin_right = 110.0
+margin_bottom = 559.0
+custom_fonts/font = SubResource( 61 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 17 )
+text = "Menu"
+
+[connection signal="button_up" from="Menu" to="." method="_on_Menu_button_up"]

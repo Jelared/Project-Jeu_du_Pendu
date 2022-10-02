@@ -1,11 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sprites/Page.png" type="Texture" id=1]
 [ext_resource path="res://font/Interface_font.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://scenes/Main.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=4]
-[ext_resource path="res://scenes/Main2.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/Credit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Styles/Menu_boutton.tres" type="StyleBox" id=7]
 [ext_resource path="res://Styles/Menu_norm.tres" type="StyleBox" id=8]
 
@@ -19,11 +16,9 @@ font_data = ExtResource( 2 )
 
 [node name="Menu" type="Control"]
 script = ExtResource( 4 )
-main_game_scenes = ExtResource( 3 )
-main2_game_scenes = ExtResource( 5 )
-Credit_game_scenes = ExtResource( 6 )
 
 [node name="Page" type="Sprite" parent="."]
+visible = false
 position = Vector2( 546, 662 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )

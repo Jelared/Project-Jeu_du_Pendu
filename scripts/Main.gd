@@ -13,19 +13,18 @@ var affichage = [] #Array avec les lettres trouvées
 var affichage_ = "" #String avec les lettres trouvées
 var perdu = 1
 
+
 #Listes des mots
 var list = get_from_json("liste.json")
 
 
 func _ready():
+	$Menu.grab_focus()
 	choix_mot()
 	separation_mot()
 	initialisation()
 	bouttons()
-
-#ajouter le timer (avant peut etre menu)
-func _process(delta):
-	pass
+	
 
 ##Lettres avec boutons ou clavier (grâce au raccourcie dans les bouttons) : L'appuie sur un bouton envoie un signal 
 func bouttons():
@@ -132,3 +131,7 @@ func get_from_json(filename):
 	var data = parse_json(text)
 	file.close()
 	return data
+
+#Boutton de retour menu
+func _on_Menu_button_up() -> void:
+	get_tree().change_scene("res://scenes/Menu.tscn")
