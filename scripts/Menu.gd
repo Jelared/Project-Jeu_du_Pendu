@@ -4,7 +4,6 @@ extends Control
 
 func _ready() -> void:
 	$MarginContainer/HBoxContainer/classique.grab_focus()
-	GameValue.disparition_game_value()
 
 
 func _on_classique_button_up() -> void:

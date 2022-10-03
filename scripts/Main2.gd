@@ -1,4 +1,4 @@
-##Main 2
+##Main 2##
 
 
 extends Control
@@ -13,9 +13,7 @@ var mot_separeL = [] #array avec les lettres séparées
 var affichage = [] #Array avec les lettres trouvées
 var affichage_ = "" #String avec les lettres trouvées
 var perdu = 1
-var time = 0 #Début du timer
 var score = 0 #score
-var top_on = false
 
 #Listes des mots
 var list = get_from_json("liste.json")
@@ -29,22 +27,26 @@ func _ready():
 	initialisation()
 	bouttons()
 	frame()
-	affichage_chr_scor()
-	top()
+	affichage_scor()
 
 
-#appel de la frame sauvegardé (à partir de l'autoload)
+
+#################################################################################################
+#Gestion de l'autoload
+
+
+#appel de la frame sauvegardé (à partir de l'autoload) => utiliser qd on passe au mot suivant lors du reload
 func frame():
 	var Frame = GameValue.FrameValeur
 	$Pendu.frame = Frame
 	
-func affichage_chr_scor() : 
+#appel du score sauvegardé (à partir de l'autoload) => utiliser qd on passe au mot suivant lors du reload
+func affichage_scor() : 
 	GameValue.affichage_game_value()
 
-#Chronomètre (à partir de l'autoload)
-func top():
-	if (top_on):
-		GameValue.chronodepart()
+
+##################################################################################################
+#demarrage du jeux
 
 
 ##Lettres avec boutons ou clavier (grâce au raccourcie dans les bouttons) : L'appuie sur un bouton envoie un signal 
@@ -85,13 +87,16 @@ func initialisation():
 		print (affichage)
 
 
+##################################################################################################
+#Fonction du test
+
+
+
 #test pour la lettre choisie
 func test():
 	var position_L = mot_separeL.find(lettre_clavier)
 	if position_L == -1:
 		Musicontroler.rate()
-		print("no")
-		print (position_L)
 		pendu()
 	else :
 		while position_L > -1: #boucle pour vérifier s'il existe plusieurs fois la lettre
@@ -103,12 +108,16 @@ func test():
 				$Affichage.text = affichage_
 			position_L = mot_separeL.find(lettre_clavier,position_L+1) # suite la boucle qui décale la position de 1 pour vérif
 			gagner()
-			print("ok")
 			print (mot_separeL.find(lettre_clavier))
 			print (affichage)
 
 
-#Comptage de perte/Game-Over
+
+##################################################################################################
+#Si erreur
+
+
+#Comptage du nombre d'erreur et affichage de la frame correspondant
 func pendu():
 	if perdu < 7 :
 		#Mise en mémoire de la frame
@@ -117,46 +126,49 @@ func pendu():
 		$Pendu.frame = Frame
 		perdu += 1
 	if perdu == 7 :
-		$Gameover.text = "PERDU"
 		recommencer()
-
-
-#Affichage gagner
-func gagner():
-	var a = mot_separeL
-	print("g")
-	var b = affichage
-	if a==b :
-		GameValue.addpoint()
-		$Motsuivant.text = "MOT SUIVANT"
-		yield(get_tree().create_timer(1.0), "timeout")
-		relance()
 
 
 #Bouton de relance du jeux en entier
 func recommencer():
 	$Container.visible = false #dispartion des boutons des lettres
-	var buttonR = Button.new()
-	buttonR.text = "Rejouer"
-	buttonR.anchor_left = 0.45
-	buttonR.anchor_top = 0.8
-	buttonR.rect_size.y = 50
-	buttonR.rect_size.x = 200
-	buttonR.connect("pressed", self, "rejouer")
-	add_child(buttonR)
+	$Nbdemots.visible = true
+	score = GameValue.ScoreValeur
+	$Nbdemots.text = "Vous avez trouvé : %s mots (cliquez ici pour rejouer ou espace)" % score
+	$Nbdemots.connect("pressed", self, "rejouer")
+
 	
 #redemarrage du jeux en entier
 func rejouer():
-	top_on = true
 	GameValue.reset()
 	get_tree().reload_current_scene()
-	
-#mot suivant après avaoir gagner un point de score
+
+
+##################################################################################################
+#Si mot trouvé
+
+
+
+#Gain de 1 point
+func gagner():
+	var a = mot_separeL
+	var b = affichage
+	if a==b :
+		GameValue.addpoint()
+		yield(get_tree().create_timer(1.0), "timeout")
+		relance()
+
+
+#mot suivant (après avaoir gagner un point de score)
 func relance():
-	top_on = false
 	get_tree().reload_current_scene()
 
-	
+
+
+##################################################################################################
+#Liste de mot
+
+
 # Importation json
 func get_from_json(filename):
 	var file = File.new()
@@ -166,6 +178,12 @@ func get_from_json(filename):
 	file.close()
 	return data
 	
+	
+	
+##################################################################################################
+#Bouton interface
+	
 #Boutton de retour menu
 func _on_Menu_button_up() -> void:
+	GameValue.reset()
 	get_tree().change_scene("res://scenes/Menu.tscn")
