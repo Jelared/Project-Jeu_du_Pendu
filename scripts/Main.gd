@@ -12,6 +12,7 @@ var mot_separeL = [] #array avec les lettres séparées
 var affichage = [] #Array avec les lettres trouvées
 var affichage_ = "" #String avec les lettres trouvées
 var perdu = 1
+var gainperte
 
 
 #Listes des mots
@@ -19,12 +20,16 @@ var list = get_from_json("liste.json")
 
 
 func _ready():
-	$Menu.grab_focus()
+#	$Menu.grab_focus()
 	choix_mot()
 	separation_mot()
 	initialisation()
 	bouttons()
 	
+
+#################################################################################################
+#demarrage du jeux
+
 
 ##Lettres avec boutons ou clavier (grâce au raccourcie dans les bouttons) : L'appuie sur un bouton envoie un signal 
 func bouttons():
@@ -64,6 +69,10 @@ func initialisation():
 		print (affichage)
 
 
+##################################################################################################
+#Fonction du test
+
+
 #test pour la lettre choisie
 func test():
 	var position_L = mot_separeL.find(lettre_clavier)
@@ -87,13 +96,17 @@ func test():
 			print (affichage)
 
 
+##################################################################################################
+#gagner ou perdu
+
+
 #Comptage de perte/Game-Over
 func pendu():
 	if perdu < 7 :
 		$Pendu.frame = perdu
 		perdu += 1
 	if perdu == 7 :
-		$Gameover.text = "PERDU"
+		gainperte = "PERDU"
 		Brejouer()
 
 
@@ -103,7 +116,7 @@ func gagner():
 	print("g")
 	var b = affichage
 	if a==b :
-		$Win.text = "BRAVO"
+		gainperte = "GAGNER"
 		Brejouer()
 
 
@@ -111,7 +124,7 @@ func gagner():
 func Brejouer():
 	$Container.queue_free() #dispartion des boutons des lettres
 	var buttonR = Button.new()
-	buttonR.text = "Rejouer"
+	buttonR.text = "%s - Rejouer" %gainperte
 	buttonR.anchor_left = 0.45
 	buttonR.anchor_top = 0.8
 	buttonR.rect_size.y = 50
@@ -123,6 +136,11 @@ func Brejouer():
 func rejouer():
 	get_tree().reload_current_scene()
 	
+
+##################################################################################################
+#Liste de mot
+	
+	
 # Importation json
 func get_from_json(filename):
 	var file = File.new()
@@ -131,6 +149,9 @@ func get_from_json(filename):
 	var data = parse_json(text)
 	file.close()
 	return data
+
+##################################################################################################
+#Bouton interface
 
 #Boutton de retour menu
 func _on_Menu_button_up() -> void:
