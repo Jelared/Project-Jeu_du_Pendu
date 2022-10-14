@@ -1,15 +1,14 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Groupes/buttongroup_clavier.tres" type="ButtonGroup" id=2]
-[ext_resource path="res://Sprites/SP1.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/SP6.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Pendu_5.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Pendu_3.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Page.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/SP3.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/SP2.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/SP4.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/SP5.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/SP0.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Pendu_0.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Pendu_2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Pendu_4.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Pendu_1.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Pendu_6.png" type="Texture" id=11]
 [ext_resource path="res://font/Interface_font.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://Styles/Menu_boutton.tres" type="StyleBox" id=16]
@@ -189,7 +188,7 @@ shortcut = SubResource( 55 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -215,17 +214,14 @@ position = Vector2( 546, 662 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 5 )
 
-[node name="test" type="Sprite" parent="."]
-position = Vector2( 642, 12 )
-texture = ExtResource( 11 )
-
 [node name="Affichage" type="RichTextLabel" parent="."]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = 141.0
-margin_top = -59.0
-margin_bottom = 3.0
+margin_left = 149.0
+margin_top = -101.0
+margin_right = 8.0
+margin_bottom = -39.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
@@ -576,7 +572,7 @@ group = ExtResource( 2 )
 text = "Z"
 
 [node name="Pendu" type="AnimatedSprite" parent="."]
-position = Vector2( 723, 250 )
+position = Vector2( 825, 258 )
 frames = SubResource( 1 )
 
 [node name="Crédit" type="CanvasLayer" parent="."]

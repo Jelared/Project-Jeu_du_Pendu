@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SP4.png-5bad12451f739619352b3742b5cb8c46.stex"
+path="res://.import/Pendu_4.png-b049db4ea625cce46398dc805560805a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SP4.png"
-dest_files=[ "res://.import/SP4.png-5bad12451f739619352b3742b5cb8c46.stex" ]
+source_file="res://Sprites/Pendu_4.png"
+dest_files=[ "res://.import/Pendu_4.png-b049db4ea625cce46398dc805560805a.stex" ]
 
 [params]
 

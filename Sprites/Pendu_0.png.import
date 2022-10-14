@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SP5.png-f20772a7007d86a1bbee38525ff7918f.stex"
+path="res://.import/Pendu_0.png-e4e890c9ba1eaaf6668555ce8ed457db.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SP5.png"
-dest_files=[ "res://.import/SP5.png-f20772a7007d86a1bbee38525ff7918f.stex" ]
+source_file="res://Sprites/Pendu_0.png"
+dest_files=[ "res://.import/Pendu_0.png-e4e890c9ba1eaaf6668555ce8ed457db.stex" ]
 
 [params]
 
