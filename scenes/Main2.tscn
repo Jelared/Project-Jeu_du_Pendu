@@ -593,7 +593,7 @@ group = ExtResource( 2 )
 text = "Z"
 
 [node name="Pendu" type="AnimatedSprite" parent="."]
-position = Vector2( 825, 258 )
+position = Vector2( 825, 255 )
 frames = SubResource( 1 )
 
 [node name="Menu" type="Button" parent="."]
