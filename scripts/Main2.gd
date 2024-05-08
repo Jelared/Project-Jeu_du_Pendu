@@ -16,7 +16,7 @@ var perdu = 1
 var score = 0 #score
 
 #Listes des mots
-var list = get_from_json("liste.json")
+var list = get_from_json("res://liste.json")
 
 
 #Démarrage des fonctions

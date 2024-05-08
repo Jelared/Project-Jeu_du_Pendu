@@ -16,7 +16,7 @@ var gainperte
 
 
 #Listes des mots
-var list = get_from_json("liste.json")
+var list = get_from_json("res://liste.json")
 
 
 func _ready():
