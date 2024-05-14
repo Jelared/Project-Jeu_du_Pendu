@@ -18,3 +18,6 @@ Deux modes sont possibles
 
 [itch.io](https://jelared.itch.io/pendu)
 
+### **_Licence_**
+
+This project is licensed under the MIT license
